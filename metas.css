@@ -1,0 +1,245 @@
+:root {
+    --primary-color: #397BE0;
+    --secondary-color: #0F0F0B;
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html {
+font-size: 62.5%;
+}
+
+body {
+background-color: #53BCF8;
+font: bold 2rem 'Open Sans', sans-serif;
+}
+
+.todo {
+display: flex;
+width: 50vw;
+flex-direction: column;
+align-items: center;
+margin: 0 auto;
+gap: 15px;
+}
+
+.todo__title {
+display: flex;
+font-family: "Pixelify Sans", sans-serif;
+background-color: var(--secondary-color);
+width: 100%;
+height: auto;
+max-width: 600px; /* Define uma largura máxima */
+justify-content: center;
+align-items: center;
+margin: 50px 0; /* Espaçamento em cima e embaixo */
+box-shadow: 1px 1px 5px var(--secondary-color);
+font-size: 3rem;
+padding: 10px 5px; /* Adiciona padding lateral */
+color: var(--primary-color);
+}
+
+.cloud-img {
+    max-width: 20%; /* Ajusta o tamanho máximo das nuvens como porcentagem */
+    height: auto; /* Mantém a proporção */
+    margin: 0 5px; /* Adiciona espaço entre a nuvem e o texto */
+}
+.todo__list {
+display: flex;
+width: 100%;
+flex-direction: column;
+gap: 10px;
+}
+
+.todo__item{
+display: flex;
+width: 100%;
+height: 60px;
+justify-content: space-between;
+align-items: center;
+padding: 5px;
+box-shadow: 1px 1px 5px var(--secondary-color);
+}
+.todo__item > div {
+width: 80%;
+}
+.todo__item:hover {
+cursor: pointer;
+transition: all .5s ease;
+background-color: var(--secondary-color);
+color: var(--primary-color);
+}
+
+
+.todo__item > input[type='text'] {
+border: none;
+width: 80%;
+font: inherit;
+}
+
+.todo__item > input[type='button'],
+.todo__item > input[type='checkbox'] {
+width: 30px;
+height: 30px;
+font: inherit;
+}
+
+
+.todo__item > input[type='checkbox']:checked  + div {
+text-decoration:line-through;
+}
+
+.todo__new-item{
+display: flex;
+background-color: white;
+width: 100%;
+height: 70px;
+justify-content: space-evenly;
+padding: 20px 0;
+box-shadow: 1px 1px 5px var(--secondary-color);
+margin: 10px;
+font: inherit;
+font-size: 2rem; /* Tamanho da fonte do placeholder */
+
+}
+
+.todo__new-item > input{
+background-color: white;
+border: none;
+width: 80%;
+outline: none;
+font: inherit;
+}
+
+.todo__new-item > input::placeholder {
+font-style: italic;
+font-weight: normal;
+}
+
+.image-text-container {
+    display: flex;
+    flex-direction: row; /* Alinha os itens em uma linha */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 15px; /* Espaçamento entre os itens */
+    margin: 20px; /* Margem ao redor do container */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
+}
+
+.todo-gif {
+    max-width: 120px; /* Define um tamanho máximo para as imagens */
+    height: auto; /* Mantém a proporção */
+    flex: 1 1 auto; /* Permite que as imagens cresçam e encolham */
+}
+
+
+/* Estilo do ícone de Home */
+.home-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block;
+}
+
+.home-icon img {
+    width: 40px; /* Tamanho do ícone */
+    height: 40px; /* Ajusta o tamanho da imagem */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: transform 0.2s; /* Animação ao passar o mouse */
+}
+
+.home-icon img:hover {
+    transform: scale(1.1); /* Aumenta levemente o ícone ao passar o mouse */
+}
+
+/* Media Queries para responsividade */
+
+/* Ajuste para telas maiores */
+@media (min-width: 1024px) {
+    .image-text-container img {
+        max-width: 25%; /* Aumenta o tamanho das imagens em telas grandes */
+    }
+    .todo-gif {
+        max-width: 180px; /* Aumenta o tamanho máximo das imagens para telas grandes */
+    }
+
+    .image-text-container p {
+        font-size: 2rem; /* Aumenta o tamanho da fonte para telas grandes */
+        padding: 20px; /* Adiciona mais padding para melhor legibilidade */
+    }
+}
+
+@media (max-width: 768px) {
+    .todo__title {
+        font-size: 2rem; /* Reduz o tamanho da fonte em telas menores */
+    }
+    
+    .todo {
+        width: 95%; /* Aumenta a largura em telas menores */
+    }
+
+    .todo__new-item {
+        height: 60px; /* Ajusta a altura */
+    }
+
+    .todo__item {
+        height: 50px; /* Ajusta a altura dos itens da lista */
+    }
+
+    .todo__item > input[type='button'],
+    .todo__item > input[type='checkbox'] {
+        width: 25px; /* Ajusta o tamanho dos botões */
+        height: 25px;
+    }
+
+    
+    .todo-gif {
+        max-width: 150px; /* Aumenta o tamanho máximo das imagens em telas menores */
+    }
+
+    .image-text-container p {
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte em telas menores */
+        text-align: center; /* Centraliza o texto */
+        flex: 1 1 100%; /* Faz o texto ocupar toda a largura */
+        padding: 10px; /* Adiciona padding para melhorar a legibilidade */
+    }
+
+    .home-icon img {
+        width: 30px; /* Reduz o tamanho em telas menores */
+        height: 30px;
+    }
+    .todo__title {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte em telas menores */
+    }
+
+    .cloud-img {
+        max-width: 15%; /* Diminui o tamanho das nuvens em telas pequenas */
+    }
+}
+
+@media (max-width: 480px) {
+    .todo__title {
+        font-size: 1.5rem; /* Reduz ainda mais o tamanho da fonte */
+    }
+
+    .todo__new-item > input {
+        width: 100%; /* Faz o campo de entrada ocupar toda a largura */
+    }
+
+    .todo-gif {
+        max-width: 100px; /* Ajusta o tamanho máximo em telas muito pequenas */
+    }
+
+    .image-text-container p {
+        font-size: 1rem; /* Ajusta o tamanho da fonte em telas muito pequenas */
+    }
+    .todo__title {
+        font-size: 1.2rem; /* Reduz ainda mais o tamanho da fonte */
+    }
+
+    .cloud-img {
+        max-width: 25%; /* Ajusta o tamanho das nuvens em telas muito pequenas */
+    }
+}

@@ -1,0 +1,128 @@
+/* Reset de margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos do corpo da página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'sans-serif';
+    background: rgb(75,167,241);
+    background: linear-gradient(60deg, rgba(75,167,241,1) 0%, rgba(90,205,255,1) 35%, rgba(185,230,230,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; /* Para que as nuvens possam ser posicionadas */
+    overflow: hidden; /* Impede que as nuvens saiam da tela */
+}
+
+/* Estilos do container principal */
+.container {
+    text-align: center;
+    z-index: 1; /* Certifica-se de que o conteúdo fique acima das nuvens */
+}
+
+/* Estilos do título principal e subtítulo */
+h1 {
+    margin: 10px 0;
+    font-size: 3rem;
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+h3 {
+    font-family: "Satisfy", cursive;
+    font-weight: 600;
+    font-style: normal;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+/* Estilos da div que agrupa a imagem e o botão */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Estilos do botão */
+.start-btn {
+    display: inline-block; /* Faz a âncora se comportar como um bloco */
+    padding: 10px 30px;
+    background-color: #B398F1;
+    border-radius: 20px;
+    border: 1px solid white;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-decoration: none; /* Remove o sublinhado da âncora */
+    transition: background-color 0.3s, border-color 0.3s; /* Adiciona transição na cor da borda */    margin-top: 10px;
+    width: 180px;
+  
+}
+
+.start-btn:hover {
+    background-color: pink;
+}
+
+.start-btn h1 {
+    margin: 0;
+    font-family: 'Pixelify Sans';
+    font-size: 1.6rem;
+}
+
+ /* Ajuste do tamanho do coração e das nuvens */
+ .heart {
+    width: 250px; /* Aumenta o tamanho do coração */
+}
+
+/* Estilos para as nuvens */
+.cloud {
+    position: absolute;
+    z-index: 0;
+}
+
+.clouds-top-left {
+    top: 20px;
+    left: 20px;
+    
+}
+
+.clouds-bottom-left {
+    bottom: 20px;
+    left: 20px;
+    
+}
+
+.clouds-bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .start-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .heart {
+        width: 100px;
+    }
+
+    .clouds-top-left, .clouds-bottom-left, .clouds-bottom-right {
+        width: 200px;
+    }
+}
